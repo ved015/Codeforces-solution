@@ -15,12 +15,21 @@ int main(){
             cout << dividend << endl;
         }
         else{
-            for(int i = dividend-1; i>= 1; i--){
-                if((x - (n*i))%i == 0){
-                    cout << i << endl;
-                    break;
+            int ans = 0;
+            for(int i = 1; i*i <= x; i++){
+                if(x%i ==0){
+                    int N = x/i;
+                    if(N >= n){
+                        ans = max(ans, i);
+                    }
+                    int j = x/i;
+                    N = x/j;
+                    if(N >= n){
+                        ans = max(ans, j);
+                    }
                 }
             }
+            cout << ans << endl;
         }            
     }
     return 0;

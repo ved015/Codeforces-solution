@@ -14,7 +14,7 @@ int main(){
         long long int sum = 0,prefix = 0;
         for(long long int i = 1; i<n; i++){
             prefix += a[i-1];
-            if((a[i]*100-prefix*k)/k <=  sum){
+            if(a[i]*100 <= (prefix+sum)*k){
                 continue;
             }
             else{

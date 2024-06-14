@@ -1,4 +1,5 @@
 #include<iostream>
+#include<unordered_map>
 #include<vector>
 #include<algorithm>
 using namespace std;
@@ -6,23 +7,29 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;
+        long long n;
         cin >> n;
-        vector <int> arr(n);
-        for(int i = 0; i < n; i++) cin >> arr[i];
-
-        sort(arr.begin(),arr.end());
-        long long count = 0;
-        for(int i = 0; i < n - 2; i++){
-            for(int j = i+1; j < n - 1; j++){
-                for(int k = j+1; k < n; k++){
-                    if(arr[j] + 1 > arr[k]){
-                        count++;
-                    }
-                }
-            }
+        vector <long long> arr(n);
+        unordered_map<long long,long long> freq;
+        for(long long i = 0; i < n; i++){
+            cin >> arr[i];
+            freq[arr[i]]++;
         }
-        cout << count << endl;
+
+
+        long long ans = 0;
+        long long runningsum = 0;
+        for(auto it : freq){
+            long long num = it.second;
+            if(num >= 3){
+                ans += (num*(num-1)*(num-2))/6;
+            }
+            if(num >= 2){
+                ans += num*(num-1)*runningsum/2;
+            }
+            runningsum += num;
+        }
+        cout << ans << endl;
     }
     return 0;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: deshaw1","url":"/Users/vedantmahajan/Desktop/codeforces/deshaw1.cpp","tests":[{"id":1720235927288,"input":"4\n9432\nxhdc\n9432\nwhfc\n9432\nxdda\n546\nlgn","output":"1\n1\n0\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/deshaw1.cpp","group":"local","local":true}

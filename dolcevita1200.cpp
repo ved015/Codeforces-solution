@@ -21,32 +21,11 @@ int main(){
         }
 
         long long ans = 0;
-        long long count  = 0;
-        while(true){
-            long long prevans = ans;
-            long long s = 0,e = n-1;
-
-            while(s <= e){
-                long long mid = s + (e-s)/2;
-                long long value = prefix[mid] + count*(mid+1);
-
-                if(value > x && s == e){
-                    ans += mid;
-                    break;
-                }
-
-                if(value == x || (value < x && s == e)){
-                    ans += mid + 1;
-                    break;
-                }
-
-                if(value < x){
-                    s = mid + 1;
-                }
-                else e = mid - 1;
+        for(int i = 0; i < n; i++){
+            if(x >= prefix[i]){
+                int val = ((x-prefix[i])/(i+1)) + 1;
+                ans += val;
             }
-            count++;
-            if(prevans == ans) break;
         }
         cout << ans << endl;
     }

@@ -1,41 +1,30 @@
-#include <iostream>
-#include <unordered_map>
+#include<iostream>
+#include<map>
 using namespace std;
 
 int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n, k;
-        cin >> n >> k;
-        unordered_map<int, int> m;
-        for (int i = 0; i < n; i++) {
-            long long a;
-            cin >> a;
-            m[a % k]++;
+        int n, m;
+        cin >> n >> m;
+        map<int, int> cnt;
+        while (n--) {
+            int x;
+            cin >> x;
+            cnt[x % m]++;
         }
         int ans = 0;
-
-        for (int i = 0; i < k; i++) {
-            if (m.find(i) != m.end()) {
-                int val = i;
-                int rem = (k - val) % k;
-                m[val]--;
-                if (m[val] == 0) m.erase(val);
-
-                while (m.find(rem) != m.end()) {
-                    m[rem]--;
-                    if (m[rem] == 0) m.erase(rem);
-                    rem = (k - rem) % k;
-                }
+        for (auto &c : cnt) {
+            if (c.first == 0) ans++;
+            else if (2 * c.first == m) {
                 ans++;
+            } else if (2 * c.first < m || cnt.find(m - c.first) == cnt.end()) {
+                int x = c.second, y = cnt[m - c.first];
+                ans += 1 + max(0, abs(x - y) - 1);
             }
         }
-        for (auto &it : m) {
-            ans += it.second;
-        }
-
-        cout << ans << endl;
+        cout << ans << '\n';
     }
     return 0;
 }

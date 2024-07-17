@@ -27,7 +27,6 @@ void solve()
         {
             b.push_back(i);
             res += lower_bound(all(b), arr[i]) - b.begin();  //index 
-            // cout<<arr[i]<<" "<<res<<" "<<i<<endl;
         }
     }
     cout << res << endl;

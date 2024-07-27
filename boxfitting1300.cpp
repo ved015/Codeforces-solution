@@ -2,8 +2,7 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
- 
- 
+
 void solve(){
     ll n,w;
     cin>>n>>w;
@@ -35,8 +34,6 @@ int main(){
             cout.tie(0);
             cout<<fixed;
             cout<<setprecision(10);
-    //        freopen("timber_input.txt", "r", stdin);
-    //        freopen("timber_output.txt", "w", stdout);
             int t=1;
             cin>>t;
             for(int i=1;i<=t;i++){

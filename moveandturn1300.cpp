@@ -1,6 +1,7 @@
 #include<iostream>
 #include<set>
 #include<algorithm>
+#include<bits/stdc++.h>
 using namespace std;
 void solve(int startx,int starty,int t,set<pair<int,int> >&s,vector<vector<vector<int> > > &dp,int &n){
     if(t == 0){

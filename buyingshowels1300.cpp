@@ -26,3 +26,26 @@ int main(){
     }
     return 0;
 }
+
+// int find_majority(int n, vector<int>& nums) {
+//     int count = 0, el = -1;
+//     for (int i = 0; i < n; i++) {
+//         if (count == 0) {
+//             el = nums[i];
+//             count++;
+//         } else if (nums[i] == el) {
+//             count++;
+//         } else {
+//             count--;
+//         }
+//     }
+//     count = 0;
+//     for (int i = 0; i < n; i++) {
+//         if (nums[i] == el) {
+//             count++;
+//         }
+//     }
+//     if (count > n / 2) return el;
+//     return -1;
+// }
+

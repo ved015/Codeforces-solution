@@ -9,6 +9,7 @@ int solve(int l,int k,vector<int> &nums){
     int maxi = INT_MIN;
     for(int i = l; i < nums.size(); i++){
         addres = addres & nums[i];
+        if(addres == 0) break;
         if(addres >= k){
             maxi = max(maxi,i);
         }

@@ -6,9 +6,8 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;
-        cin >> n;
-        string s = to_string(n);
+        string s;
+        cin >> s;
         int sizeofs = s.size();
 
         if(sizeofs < 3){
@@ -19,7 +18,7 @@ int main(){
             cout << "YES" << endl;
             continue;
         }
-        if(s.size() > 3 && (s[0] == '1' && s[1] == '0' && s[2] == '1')){
+        if(s.size() > 3 && (s[0] == '1' && s[1] == '0' && s[2] != '0')){
             cout << "YES" << endl;
             continue;
         }

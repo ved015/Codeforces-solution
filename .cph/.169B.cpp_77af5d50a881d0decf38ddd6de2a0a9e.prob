@@ -1,0 +1,1 @@
+{"name":"Local: 169B","url":"/Users/vedantmahajan/Desktop/codeforces/169B.cpp","tests":[{"id":1723733176745,"input":"6\n1 2\n3 4\n2 5\n2 5\n3 7\n6 7\n4 5\n2 8\n1 3\n3 5\n1 4\n7 8","output":"1\n3\n2\n3\n2\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/169B.cpp","group":"local","local":true}

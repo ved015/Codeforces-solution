@@ -6,51 +6,42 @@
 #include<string>
 using namespace std;
 typedef long long ll;
-bool solve(int idx, ll sum,int count,ll n, vector<ll> &nums,int &minlen) {
-    if(sum > n) return false;
-    if (sum == n) {
-        minlen = min(count, minlen);
-        return true;
+ll nofbits(ll num){
+    ll val = 0;
+    while(num > 0){
+        if(num%2 == 1) val++;
+        num = num/2;
     }
-    if (idx >= nums.size()) return false; 
-
-    bool take = solve(idx + 1,sum + nums[idx],count + 1, n, nums,minlen);
-
-    bool nottake = solve(idx + 1,sum,count, n, nums,minlen);
-
-    return take || nottake;
+    return val;
 }
 int main(){
     int t;
     cin >> t;
-    set<ll> s;
-
-    int val = 0;
-    ll temp = 0;
-    while(temp <= 1e12){
-        temp = (ll)(1LL << val);
-        s.insert(temp);
-        val++;
-    }
-    ll fac = 1;
-    ll num = 2;
-    while(fac <= 1e12){
-        s.insert(fac);
-        fac = fac * num;
-        num++;
-    }
-    vector<ll> nums;
-    for(auto it : s){
-        nums.push_back(it);
-    }
     while(t--){
-        ll n;
-        cin >> n;
-        int minlen = 80;
-        if(solve(0,0,0,n,nums,minlen)){
-            cout << minlen << endl;
+        ll a;
+        cin >> a;
+        ll val = 1;
+        ll multi = 2;
+        vector<ll> nums;
+        while(val <= a){
+            nums.push_back(val);
+            val = val*multi;
+            multi++;
         }
-        else cout << -1 << endl;
+        ll ans = 1e5;
+        ll n = nums.size();
+        for (ll mask = 0; mask < (1 << n); ++mask) {
+            ll sum = 0;
+            ll count = 0;
+            for (ll i = 0; i < n; ++i){
+                if(mask & (1 << i)){
+                    sum += nums[i];
+                    count++;
+                }
+            }
+            if(sum <= a) ans = min(ans,nofbits(a - sum) + count);
+        }
+        cout << ans << endl;
     }
     return 0;
 }

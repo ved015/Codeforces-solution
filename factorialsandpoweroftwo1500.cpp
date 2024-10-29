@@ -6,7 +6,6 @@
 #include<string>
 using namespace std;
 typedef long long ll;
-
 bool solve(int idx, ll sum,int count,ll n, vector<ll> &nums,int &minlen) {
     if(sum > n) return false;
     if (sum == n) {

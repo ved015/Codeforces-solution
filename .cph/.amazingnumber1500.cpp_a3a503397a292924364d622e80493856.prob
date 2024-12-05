@@ -1,0 +1,1 @@
+{"name":"Local: amazingnumber1500","url":"/Users/vedantmahajan/Desktop/codeforces/amazingnumber1500.cpp","tests":[{"id":1731340989746,"input":"3\n3 3\n1 10\n1 1000000000","output":"1\n6\n91"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/amazingnumber1500.cpp","group":"local","local":true}

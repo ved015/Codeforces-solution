@@ -1,0 +1,1 @@
+{"name":"Local: tape1400","url":"/Users/vedantmahajan/Desktop/codeforces/tape1400.cpp","tests":[{"id":1728711781458,"input":"4 100 2\n20 30 75 80","output":"17"},{"id":1728711787148,"input":"5 100 3\n1 2 4 60 87","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/tape1400.cpp","group":"local","local":true}

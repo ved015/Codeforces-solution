@@ -1,0 +1,1 @@
+{"name":"Local: icpc6th","url":"/Users/vedantmahajan/Desktop/codeforces/icpc6th.cpp","tests":[{"id":1731679242877,"input":"1\n4 1 3 2 4 3 2 4\n1 2 3 4","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/icpc6th.cpp","group":"local","local":true}

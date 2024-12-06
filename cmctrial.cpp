@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-int solve(vector <long long> &nums,int n){
+int solv e(vector <long long> &nums,int n){
     int ans = 0;
     for(int i = 0; i < n; i++){
         if(nums[i] > 1 && i > 0){

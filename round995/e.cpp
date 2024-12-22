@@ -29,71 +29,42 @@ vll factors(int n) { vll ans; int l = sqrt(n); for (int i = 1; i <= l; i++) { if
 string DecimalToBinary(ll num){string str; while(num){if(num & 1) str.pb('1');else str.pb('0');num>>=1;}return str;}
 ll BinaryToDecimal(string num){ll ans = 0; ll base = 1; for (int i = sz(num) - 1; i >= 0; i--) {if (num[i] == '1') ans += base; base<<=1;}return ans;}
 
-
-ll solve(ll cost, const vector<pair<ll,ll> > &temp, ll k) {
-    ll customer = 0;
-    ll negatives = 0;
-
-    for (const auto &p : temp) {
-        if (p.first >= cost) {
-            customer++;
-        }
-        if (p.second >= cost && p.first < cost) {
-            negatives++;
-        }
-    }
-
-    ll total = customer;
-    if (negatives <= k) {
-        total += negatives;
-    } else {
-        total += k;
-    }
-
-    return total;
-}
-
-
-void Vedant() {
-    ll n, k;
+void Vedant(){
+    ll n,k;
     cin >> n >> k;
-    vll a(n), b(n);
-    for (ll i = 0; i < n; i++) cin >> a[i];
-    for (ll i = 0; i < n; i++) cin >> b[i];
 
-    vector<pair<ll,ll> > temp;
-    for (ll i = 0; i < n; i++) temp.pb(mp(a[i], b[i]));
+    vll a(n),b(n);
+    for(int i = 0; i < n; i++) cin >> a[i];
+    for(int i = 0; i < n; i++) cin >> b[i];
 
     sort(a.begin(),a.end());
     sort(b.begin(),b.end());
 
-    ll mini = a[0], maxi = b[n-1];
-    ll ans = 0;
-
-    while (mini <= maxi) {
-        ll cost = mini + (maxi - mini) / 2;
-        ll customers = solve(cost, temp, k);
-        ll profit = cost * customers;
-
-        ans = max(ans, profit);
-
-        ll next_customers = solve(cost + 1, temp, k);
-        if ((cost + 1) * next_customers > ans) {
-            mini = cost + 1;
-        } else {
-            maxi = cost - 1;
-        }
+    vll temp;
+    for(int i = 0; i < n; i++){
+        temp.pb(a[i]);
+        temp.pb(b[i]);
     }
+    sort(temp.begin(), temp.end());
 
-    cout << ans << endl;
+    ll maxi = INT_MIN;
+    for(int i = 0; i < 2*n; i++){
+        ll pos = n - (lower_bound(a.begin(), a.end(), temp[i]) - a.begin());
+        ll neg = n - (lower_bound(b.begin(), b.end(), temp[i]) - b.begin());
+        neg -= pos;
+ 
+        if(neg<=k) maxi = max(maxi, temp[i]*(pos+neg));
+    }
+    cout << maxi << endl;
 }
 
-int main() {
+
+int main(){
     fastio();
     int t;
     cin >> t;
-    while (t--) {
-        Vedant();
+    while(t--){
+       Vedant();
     }
     return 0;
 }

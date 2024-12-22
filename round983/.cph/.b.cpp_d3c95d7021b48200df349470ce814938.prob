@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"/Users/vedantmahajan/Desktop/codeforces/rond983/b.cpp","tests":[{"id":1734844213174,"input":"6\n1 1\n3 2\n3 3\n15 8\n5 2\n5 3","output":"1\n1\n3\n1 2 3\n-1\n5\n1 4 7 10 13"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/rond983/b.cpp","group":"local","local":true}

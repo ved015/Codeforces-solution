@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"/Users/vedantmahajan/Desktop/codeforces/round968/c.cpp","tests":[{"id":1735021065313,"input":"5\n3\nabc\n5\nedddf\n6\nturtle\n8\npppppppp\n10\ncodeforces","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/round968/c.cpp","group":"local","local":true}

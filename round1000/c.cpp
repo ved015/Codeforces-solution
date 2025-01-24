@@ -29,29 +29,29 @@ vll factors(int n) { vll ans; int l = sqrt(n); for (int i = 1; i <= l; i++) { if
 string DecimalToBinary(ll num){string str; while(num){if(num & 1) str.pb('1');else str.pb('0');num>>=1;}return str;}
 ll BinaryToDecimal(string num){ll ans = 0; ll base = 1; for (int i = sz(num) - 1; i >= 0; i--) {if (num[i] == '1') ans += base; base<<=1;}return ans;}
 
-// void dfs(int node, vector<vi> &adjls, vector<bool> &visited) {
-//     visited[node] = true;
-//     for (int neighbor : adjls[node]) {
-//         if (!visited[neighbor]) {
-//             dfs(neighbor, adjls, visited);
-//         }
-//     }
-// }
+void dfs(int node, vector<vi> &adjls, vector<bool> &visited) {
+    visited[node] = true;
+    for (int neighbor : adjls[node]) {
+        if (!visited[neighbor]) {
+            dfs(neighbor, adjls, visited);
+        }
+    }
+}
 
-// int connectedcomp(vector<vi> &adjls) {
-//     int n = adjls.size();
-//     vector<bool> visited(n, false);
-//     int count = 0;
+int connectedcomp(vector<vi> &adjls) {
+    int n = adjls.size();
+    vector<bool> visited(n, false);
+    int count = 0;
 
-//     for (int i = 0; i < n; i++) {
-//         if (!visited[i]) {
-//             count++;
-//             dfs(i, adjls, visited);
-//         }
-//     }
+    for (int i = 0; i < n; i++) {
+        if (!visited[i]) {
+            count++;
+            dfs(i, adjls, visited);
+        }
+    }
 
-//     return count;
-// }
+    return count;
+}
 
 int check(int node, vi &indegree, vector<vi> &adjls, set<pii> &s) {
 
@@ -103,8 +103,8 @@ void Vedant(){
     // cout << endl;
     // cout << secondmax << endl;
 
-    // int ans = connectedcomp(adjls); 
-    int ans = 1;
+    int ans = connectedcomp(adjls); 
+    // int ans = 1;
     // cout << ans << endl;
 
     int maxi = INT_MIN,node = -1;

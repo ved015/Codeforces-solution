@@ -27,35 +27,34 @@ vll factors(int n) { vll ans; int l = sqrt(n); for (int i = 1; i <= l; i++) { if
 string DecimalToBinary(ll num){string str; while(num){if(num & 1) str.pb('1');else str.pb('0');num>>=1;}return str;}
 ll BinaryToDecimal(string num){ll ans = 0; ll base = 1; for (int i = sz(num) - 1; i >= 0; i--) {if (num[i] == '1') ans += base; base<<=1;}return ans;}
 
-bool comparator(const pii &a, const pii &b) {
-    if (a.first == b.first) {
-        return a.second < b.second;
-    }
-    return a.first > b.first;
-}
-
 void Vedant(){
-    int n;
-    cin >> n;
+    int x,n;
+    cin >> x >> n;
     vi a(n);
     for(int i = 0; i < n; i++) cin >> a[i];
 
-    vi temp;
-    temp.pb(a[0]);
-
-    for(int i = 1; i < n; i++){
-        auto it = upper_bound(all(temp),a[i]);
-        if(it == temp.end()){
-            temp.pb(a[i]);
-        }
-        else{
-            int idx = it - temp.begin();
-            temp[idx] = a[i];
-        }
+    set<int> s;
+    s.insert(0);
+    s.insert(x);
+    multiset<int> ans;
+    // pehle upper boune me 0 and x hai so ans me wo remove kro after adding first
+    ans.insert(x - 0);
+    for(int i = 0; i < n; i++){
+        auto idx1 = s.upper_bound(a[i]);
+        // unique hai isliye diff kabhi zero nhi aaayega lower upper dono same result denge
+        // 4 6 me 5 beech me so remove 6-4 = 2 add 6-5 and 5-4
+        // it will come bewteen two so erase previous distance bw older and add this
+        auto idx2 = idx1;
+        idx2--;
+        // in do index ke beech em aayi so remove 
+        int val1 = *idx1;
+        int val2 = *idx2;
+        ans.erase(ans.find(val1 - val2)); // ek hi iteration remove krni
+        ans.insert(val1 - a[i]);
+        ans.insert(a[i] - val2);
+        s.insert(a[i]);
+        cout << *ans.rbegin() << " ";
     }
-
-    cout << sz(temp);
-    
 }
 
 

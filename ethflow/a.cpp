@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -27,41 +27,21 @@ vll factors(int n) { vll ans; int l = sqrt(n); for (int i = 1; i <= l; i++) { if
 string DecimalToBinary(ll num){string str; while(num){if(num & 1) str.pb('1');else str.pb('0');num>>=1;}return str;}
 ll BinaryToDecimal(string num){ll ans = 0; ll base = 1; for (int i = sz(num) - 1; i >= 0; i--) {if (num[i] == '1') ans += base; base<<=1;}return ans;}
 
-bool comparator(const pii &a, const pii &b) {
-    if (a.first == b.first) {
-        return a.second < b.second;
-    }
-    return a.first > b.first;
-}
-
 void Vedant(){
-    int n;
-    cin >> n;
-    vi a(n);
-    for(int i = 0; i < n; i++) cin >> a[i];
-
-    vi temp;
-    temp.pb(a[0]);
-
-    for(int i = 1; i < n; i++){
-        auto it = upper_bound(all(temp),a[i]);
-        if(it == temp.end()){
-            temp.pb(a[i]);
-        }
-        else{
-            int idx = it - temp.begin();
-            temp[idx] = a[i];
-        }
+    string s;
+    cin >> s;
+    int cnt = 0;
+    for(auto it : s){
+        if(it == '1') cnt++;
     }
-
-    cout << sz(temp);
-    
+    cout << cnt << endl;
 }
 
 
 int main(){
     fastio();
-    int t = 1;
+    int t;
+    cin >> t;
     while(t--){
        Vedant();
     }

@@ -1,10 +1,10 @@
-// #include<bits/stdc++.h>
 #include<iostream>
 #include<vector>
 #include<algorithm>
 #include<map>
 #include<set>
 #include<string>
+#include<climits>
 using namespace std;
 
 typedef long long ll;
@@ -27,16 +27,77 @@ vll factors(int n) { vll ans; int l = sqrt(n); for (int i = 1; i <= l; i++) { if
 string DecimalToBinary(ll num){string str; while(num){if(num & 1) str.pb('1');else str.pb('0');num>>=1;}return str;}
 ll BinaryToDecimal(string num){ll ans = 0; ll base = 1; for (int i = sz(num) - 1; i >= 0; i--) {if (num[i] == '1') ans += base; base<<=1;}return ans;}
 
-void Vedant(){
-    int k;
-    cin >> k;
-    // nc2 = k
-    // xa = xb 
-    // ya = yb
-
+int helper(int pos, int op, int prev, const string& s, const vector<int>& a, 
+           vector<vector<vector<int>>>& memo) {
+    int n = s.length();
     
+    if (pos == n) {
+        return 0;
+    }
+    
+    if (memo[pos][op][prev+1] != -1) {
+        return memo[pos][op][prev+1];
+    }
+    
+    int result = INT_MAX;
+    
+    char curr = 'R';
+    if (prev != -1 && prev >= pos) {
+        curr = 'B';
+    }
+    
+    int penalty = (curr != s[pos]) ? a[pos] : 0;
+    int newpenalty = helper(pos + 1, op, prev, s, a, memo);
+    if (newpenalty != INT_MAX) {
+        result = min(result, max(penalty, newpenalty));
+    }
+    
+    if (op > 0) {
+        for (int length = 1; pos + length - 1 < n; length++) {
+            int e = pos + length - 1;
+            int segpenalty = 0;
+            
+            for (int i = pos; i <= e; i++) {
+                if ('B' != s[i]) {
+                    segpenalty = max(segpenalty, a[i]);
+                }
+            }
+            
+            int newpenalty = helper(e + 1, op - 1, e, s, a, memo);
+            if (newpenalty != INT_MAX) {
+                result = min(result, max(segpenalty, newpenalty));
+            }
+        }
+    }
+    
+    memo[pos][op][prev+1] = result;
+    return result;
 }
 
+int solve(int n, int k, const string& s, const vector<int>& a) {
+    if (k >= n) {
+        return 0;
+    }
+    
+    vector<vector<vector<int>>> memo(n, vector<vector<int>>(k+1, vector<int>(n+1, -1)));
+    
+    return helper(0, k, -1, s, a, memo);
+}
+
+void Vedant(){
+    int n, k;
+    cin >> n >> k;
+    
+    string s;
+    cin >> s;
+    
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    
+    cout << solve(n, k, s, a) << "\n";
+}
 
 int main(){
     fastio();

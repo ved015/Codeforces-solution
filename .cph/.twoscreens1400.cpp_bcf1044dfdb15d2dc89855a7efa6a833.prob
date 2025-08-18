@@ -1,1 +1,0 @@
-{"name":"Local: twoscreens1400","url":"/Users/vedantmahajan/Desktop/codeforces/twoscreens1400.cpp","tests":[{"id":1729014798999,"input":"3\nGARAGE\nGARAGEFORSALE\nABCDE\nAABCD\nTRAINING\nDRAINING","output":"14\n10\n16"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/twoscreens1400.cpp","group":"local","local":true}

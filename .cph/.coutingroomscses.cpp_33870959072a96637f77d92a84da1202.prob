@@ -1,1 +1,0 @@
-{"name":"Local: coutingroomscses","url":"/Users/vedantmahajan/Desktop/dsa/codeforces/coutingroomscses.cpp","tests":[{"id":1737792623659,"input":"5 8\n########\n#..#...#\n####.#.#\n#..#...#\n########","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/dsa/codeforces/coutingroomscses.cpp","group":"local","local":true}

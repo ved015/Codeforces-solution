@@ -1,1 +1,0 @@
-{"name":"Local: wordcombinationcses","url":"/Users/vedantmahajan/Desktop/codeforces/wordcombinationcses.cpp","tests":[{"id":1737620252417,"input":"ababab\n4\nab\nc\naba\nb","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/wordcombinationcses.cpp","group":"local","local":true}

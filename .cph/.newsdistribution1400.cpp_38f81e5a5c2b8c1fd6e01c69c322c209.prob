@@ -1,1 +1,0 @@
-{"name":"Local: newsdistribution1400","url":"/Users/vedantmahajan/Desktop/codeforces/newsdistribution1400.cpp","tests":[{"id":1728822555822,"input":"7 5\n3 2 5 4\n0\n2 1 2\n1 1\n2 6 7","output":"4 4 1 4 4 2 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/newsdistribution1400.cpp","group":"local","local":true}

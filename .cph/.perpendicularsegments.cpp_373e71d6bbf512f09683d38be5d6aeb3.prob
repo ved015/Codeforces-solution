@@ -1,1 +1,0 @@
-{"name":"Local: perpendicularsegments","url":"/Users/vedantmahajan/Desktop/codeforces/perpendicularsegments.cpp","tests":[{"id":1736952110298,"input":"4\n1 1 1\n3 4 1\n4 3 3\n3 4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/perpendicularsegments.cpp","group":"local","local":true}

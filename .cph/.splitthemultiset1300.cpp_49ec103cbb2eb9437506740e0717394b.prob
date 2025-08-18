@@ -1,1 +1,0 @@
-{"name":"Local: splitthemultiset1300","url":"/Users/vedantmahajan/Desktop/codeforces/splitthemultiset1300.cpp","tests":[{"id":1721066547664,"input":"4\n1 5\n5 2\n6 3\n16 4","output":"0\n4\n3\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/splitthemultiset1300.cpp","group":"local","local":true}

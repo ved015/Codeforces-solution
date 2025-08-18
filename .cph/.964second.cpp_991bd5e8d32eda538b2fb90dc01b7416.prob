@@ -1,1 +1,0 @@
-{"name":"Local: 964second","url":"/Users/vedantmahajan/Desktop/codeforces/964second.cpp","tests":[{"id":1722955881794,"input":"6\n3 8 2 6\n1 1 1 1\n10 10 2 2\n1 1 10 10\n3 8 7 2\n1 6 3 5","output":"2\n0\n4\n0\n2\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/codeforces/964second.cpp","group":"local","local":true}

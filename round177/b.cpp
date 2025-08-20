@@ -44,6 +44,48 @@ long long pow(long long x,long long n){
 }
 
 void Vedant(){
+    ll n,k,x;
+    cin >> n >> k >> x;
+
+    vll a(n);
+    for(auto &it : a) cin >> it;
+
+    ll sum = 0;
+    for(auto &it : a) sum += it;
+
+    ll segments = x/sum;
+    ll rem = x - (segments*sum);
+
+    if(segments > k){
+        cout << 0 << endl;
+        return;
+    }
+
+    if(rem == 0){
+        if(segments <= k) cout << n*k - (segments*n) + 1 << endl;
+        else cout << 0 << endl;
+        return;
+    }
+
+    ll idx = 0;
+
+    for(int i = n - 1; i >= 0; i--){
+        rem -= a[i];
+        if(rem <= 0){
+            idx = i;
+            break;
+        }
+    }
+    
+    ll len = (segments*n) + (n - 1 - idx);
+
+    if(len > n*k){
+        cout << 0 << endl;
+        return;
+    }
+
+    cout << n*k - len << endl;
+    return;
     
 }
 

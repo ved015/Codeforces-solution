@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"/Users/vedantmahajan/Desktop/dsa/codeforces/round1023/a.cpp","tests":[{"id":1755927941724,"input":"4\n4\n1 20 51 9\n4\n5 5 5 5\n3\n1 2 2\n2\n10 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/vedantmahajan/Desktop/dsa/codeforces/round1023/a.cpp","group":"local","local":true}
